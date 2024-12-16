@@ -70,9 +70,5 @@
 }
 
 #root {
-  @apply w-3/5 h-[80svh];
-}
-
-#calendar-view, #side-panel{
-  @apply h-full shadow-md;
+  @apply flex justify-center items-center;
 }
