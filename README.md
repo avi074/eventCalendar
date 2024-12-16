@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+# [Event Calendar](https://avi074.github.io/eventCalendar/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It's an event calendar. 
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before you start, ensure you have Node.js installed on your machine. If not, you can download and install it from [here](https://nodejs.org/).
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/avi074/eventCalendar.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Navigate into the project directory:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd eventCalendar
 ```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+## Usage
+
+To start the project, open the Folder in IDE & run
+
+```bash
+npm run dev
+```
+
+To build your project for production:
+
+```bash
+npm run build
+```
+
+## Folder Structure
+
+- `public/` : Contains your public resources.
+
+- `src/` : Contains your JSX/Source files
+
+  - `assets/` : Assets
+  - `components/` : React Components & UI
+  - `types/` : Typescript type files
+  - `lib/` : Library files
+
+- `index.html` : Index HTML file
+
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](LICENSE)

@@ -1,4 +1,4 @@
-import { PlusSquare, PlusSquareIcon } from "lucide-react"
+import { PlusSquare } from "lucide-react"
 import { Card, CardContent, CardHeader } from "./ui/card"
 import {
   Tooltip,
@@ -27,28 +27,30 @@ const EventView: React.FC<EventViewProps> = ({ selectedDate, events }) => {
   return (
     <>
       <Card className='h-[500px] overflow-y-auto'>
-        <CardHeader className='gap-2 flex-row items-center'>
-          <h2 className='font-semibold w-40'>
-            {selectedDate
-              ? format(selectedDate, "dd MMM yyyy")
-              : "Select a Day"}
-          </h2>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Input type='search' placeholder='Search...' />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Search Events</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+        <CardHeader className='gap-2'>
+          <div className="flex items-center justify-between">
+            <h2 className='font-semibold w-40'>
+              {selectedDate
+                ? format(selectedDate, "dd MMM yyyy")
+                : "Select a Day"}
+            </h2>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <PlusSquare className='cursor-pointer size-8 rounded-md hover:text-background hover:bg-foreground hover:scale-95' />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Add event</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+          <Input type='search' placeholder='Search...' />
         </CardHeader>
         <CardContent className='border-t-2'>
           {filteredEvents?.map((event) => (
             <h2 key={event.id}>{event.title}</h2>
           ))}
-          <Input type="time" />
         </CardContent>
       </Card>
     </>
